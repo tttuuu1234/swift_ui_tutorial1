@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SmileImage: View {
     var body: some View {
-        Image("S__300580868")
+        Image("turtlerock")
             .resizable()
             .frame(width: 200, height: 200)
             .clipShape(Circle())
