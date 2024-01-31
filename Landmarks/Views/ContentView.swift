@@ -9,27 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            MapView()
-                .edgesIgnoringSafeArea(.top)
-                .frame(height: 300)
-            SmileImage()
-                .offset(y: -130)
-                .padding(.bottom, -130)
-            VStack(alignment: .leading) {
-                Text("Hello, swiftui!")
-                    .font(.title)
-                HStack {
-                    Text("2つ目のText")
-                        .font(.subheadline)
-                    Spacer()
-                    Text("3つ目のText")
-                    Spacer()
-                    Text("4つ目のText")
+        NavigationSplitView {
+            List(landmarks) { landmark in
+                NavigationLink {
+                    LandmarkDetails()
+                } label : {
+                    LandmarkRow(landmark: landmark)
                 }
-            }
-            .padding()
-            Spacer()
+            } .navigationTitle("Landmarks")
+        }
+        detail: {
+            Text("Select a Landmark")
         }
     }
 }
