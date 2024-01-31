@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct SmileImage: View {
+    var image: Image
+
     var body: some View {
-        Image("turtlerock")
+        image
             .resizable()
             .frame(width: 200, height: 200)
             .clipShape(Circle())
@@ -20,6 +22,6 @@ struct SmileImage: View {
 
 struct SmileImage_Previews: PreviewProvider {
     static var previews: some View {
-        SmileImage()
+        SmileImage(image: Image("turtlerock"))
     }
 }

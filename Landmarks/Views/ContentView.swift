@@ -12,7 +12,7 @@ struct ContentView: View {
         NavigationSplitView {
             List(landmarks) { landmark in
                 NavigationLink {
-                    LandmarkDetails()
+                    LandmarkDetails(landmark: landmark)
                 } label : {
                     LandmarkRow(landmark: landmark)
                 }
